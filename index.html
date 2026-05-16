@@ -22,7 +22,7 @@
 
         /* 统一内容容器 */
         .content-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 1.5rem;
             width: 100%;
@@ -164,134 +164,17 @@
             border: 1px solid #E2E8F0; /* 加边框更精致 */
         }
 
-        /* 轮播图优化：更精致的学术风格 */
-        .carousel-container { 
-            position: relative; 
-            overflow: hidden !important;
-            margin: 0 auto;    
-            border-radius: 1rem; /* 更圆润的边角 */
-            padding: 0 !important;
-            min-height: 480px;
-            width: 100%;
-            background-color: var(--color-card);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.06); /* 更柔和的阴影 */
-        }
-        .carousel-slides { 
-            display: flex; 
-            transition: transform 0.6s ease-in-out; 
-            width: 100%;
-        }
-        .carousel-slide { 
-            min-width: 100% !important;
-            box-sizing: border-box;
-            padding: 2rem !important; /* 加大内边距更透气 */
-        }
-        .carousel-slide img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            max-height: 600px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 0.75rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* 优化阴影 */
-        }
-     /* Table轮播图适配 */
-        #tableSlides .carousel-slide img {
-            max-height: 450px;
-            margin: 2rem auto !important;
-        }
-    .carousel-slide img {
-        display: block; /* 消除图片底部默认间隙 */
-        object-position: center; /* 图片居中显示，避免裁剪关键内容 */
-    }
-        /* 关键：让轮播项成为弹性容器，实现图片垂直居中 */
-.carousel-slide {
-    display: flex;          /* 开启弹性布局 */
-    align-items: center;    /* 垂直方向居中 */
-    justify-content: center;/* 水平方向居中（可选，保证整体居中） */
-    height: 100%;           /* 继承容器高度 */
-    width: 100%;            /* 继承容器宽度 */
-    overflow: hidden;       /* 隐藏超出部分，保证边框贴合 */
-}
-
-/* 图片适配规则 */
-.carousel-slide img {
-    max-width: 100%;        /* 不超出容器宽度 */
-    max-height: 100%;       /* 不超出容器高度 */
-    object-fit: contain;    /* 完整显示图片，不裁剪 */
-    display: block;         /* 消除底部间隙 */
-}
-        /* 轮播按钮：清新自然的风格 */
-        .carousel-btn {
-            position: absolute !important;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.95);
-            color: var(--color-accent);
-            border: 1px solid var(--color-btn-border);
-            border-radius: 50%;
-            width: 48px; /* 加大按钮更易点击 */
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 999 !important;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 8px rgba(49, 151, 149, 0.15);
-            padding: 0; /* 清除按钮内边距 */
-        }
-        .carousel-btn-left { left: 20px !important; }
-        .carousel-btn-right { right: 20px !important; }
-        .carousel-btn:hover {
-            background: var(--color-accent);
-            color: white;
-            border-color: var(--color-accent);
-            transform: translateY(-50%) scale(1.05); /* 轻微放大 */
-        }
-        /* 修复按钮图标垂直居中 */
-        .carousel-btn i {
-            font-size: 1.1rem;
-            line-height: 1;
-        }
-
-        /* ========== 新增：轮播圆点指示器样式 ========== */
-        .carousel-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 998;
-        }
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(49, 151, 149, 0.3); /* 淡青色 */
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .carousel-dot.active {
-            background-color: var(--color-accent); /* 主色填充 */
-            transform: scale(1.2); /* 选中状态放大 */
-            border-color: rgba(255, 255, 255, 0.8); /* 白色边框 */
-        }
-        .carousel-dot:hover {
-            background-color: rgba(49, 151, 149, 0.6); /* hover加深 */
-        }
-
         /* 卡片样式：清新学术化卡片 */
         .card-academic {
             background-color: var(--color-card);
             border-radius: 1rem; /* 更圆润 */
-            padding: 1.8rem; /* 加大内边距 */
+            padding: 1.4rem; /* 加大内边距 */
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* 更柔和的阴影 */
             transition: all 0.3s ease; /* 慢一点的过渡 */
             border: 1px solid #F0F8F7; /* 轻微边框更精致 */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .card-academic:hover {
             transform: translateY(-3px); /* 更自然的上浮 */
@@ -301,6 +184,15 @@
         .card-academic.border-l-4 {
             border-left-color: var(--color-accent) !important;
             border-left-width: 5px !important; /* 加粗左侧边框 */
+        }
+        .card-academic img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .card-academic audio {
+            margin-top: auto;
         }
 
         /* Demo样本标题：更清晰的层级 */
@@ -348,13 +240,6 @@
             width: 100%;
             height: 100%;
             border: 0;
-        }
-
-        /* 修复GitHub图标大小 */
-        .btn-academic img {
-            width: 1.3rem;
-            height: 1.3rem;
-            object-fit: contain;
         }
 
         /* 间距优化 */
@@ -500,82 +385,70 @@
                     <span>Sample 1：</span>
                     <span class="sample-text">No, the man was not drunk. You wanted how he could take up with this stranger.</span>
                 </div>
-                <!-- 第一排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                    <!-- GT -->
+                <!-- 第一行 6个 -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_GT.png" alt="GT Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_GT.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_GT.png" alt="GT">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_GT.wav"></audio>
                     </div>
-                    <!-- Ours -->
+                    <div class="card-academic border-l-4 border-accent">
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="EventSpeech-T">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav"></audio>
+                    </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="Ours Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_Ours.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="EventSpeech">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav"></audio>
                     </div>
-                    <!-- VALL-E2 -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VALL_E2.png" alt="VALL-E2 Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_VALL_E2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_VALL_E2.png" alt="VALL-E2">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VALL_E2.wav"></audio>
                     </div>
-                    <!-- MATCHA-TTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_MATCHA_TTS.png" alt="MATCHA-TTS Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_MATCHA_TTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_MATCHA_TTS.wav"></audio>
                     </div>
-                </div>
-                <!-- 第二排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- MMAudio+AS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_MMAudio+AS.png" alt="MMAudio+AS Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_MMAudio_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_MMAudio+AS.png" alt="MMAudio+AS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_MMAudio_AS.wav"></audio>
                     </div>
-                    <!-- Diff-Foley+AS -->
+                </div>
+                <!-- 第二行 6个 -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_Diff_Foley_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Diff_Foley_AS.wav"></audio>
                     </div>
-                    <!-- VTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VTS Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_VTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VTS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
                     </div>
-                    <!-- VTS+VE -->
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VoiceCraft-Dub">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="HPMDubbing">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="StyleDubber">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                    </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VTS+AE.png" alt="VTS+VE Spectrogram 1" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_VTS_AE.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS+AE.png" alt="VTS+VE">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS_AE.wav"></audio>
                     </div>
                 </div>
             </div>
@@ -586,82 +459,68 @@
                     <span>Sample 2：</span>
                     <span class="sample-text">Dogs are sitting by the door.</span>
                 </div>
-                <!-- 第一排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                    <!-- GT -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_GT.png" alt="GT Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_GT.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_GT.png" alt="GT">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_GT.wav"></audio>
                     </div>
-                    <!-- Ours -->
+                    <div class="card-academic border-l-4 border-accent">
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="EventSpeech-T">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav"></audio>
+                    </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="Ours Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_Ours.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="EventSpeech">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav"></audio>
                     </div>
-                    <!-- VALL-E2 -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VALL_E2.png" alt="VALL-E2 Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_VALL_E2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_VALL_E2.png" alt="VALL-E2">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VALL_E2.wav"></audio>
                     </div>
-                    <!-- MATCHA-TTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_MATCHA_TTS.png" alt="MATCHA-TTS Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_MATCHA_TTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_MATCHA_TTS.wav"></audio>
                     </div>
-                </div>
-                <!-- 第二排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- MMAudio+AS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_MMAudio+AS.png" alt="MMAudio+AS Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_MMAudio_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_MMAudio+AS.png" alt="MMAudio+AS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_MMAudio_AS.wav"></audio>
                     </div>
-                    <!-- Diff-Foley+AS -->
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_Diff_Foley_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Diff_Foley_AS.wav"></audio>
                     </div>
-                    <!-- VTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VTS Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_VTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VTS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
                     </div>
-                    <!-- VTS+VE -->
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VoiceCraft-Dub">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="HPMDubbing">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="StyleDubber">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                    </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VTS+AE.png" alt="VTS+VE Spectrogram 2" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_VTS_AE.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS+AE.png" alt="VTS+VE">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS_AE.wav"></audio>
                     </div>
                 </div>
             </div>
@@ -672,82 +531,68 @@
                     <span>Sample 3：</span>
                     <span class="sample-text">His superiors had also christis, saying it was the way for ittererhoner.</span>
                 </div>
-                <!-- 第一排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                    <!-- GT -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_GT.png" alt="GT Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_GT.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_GT.png" alt="GT">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_GT.wav"></audio>
                     </div>
-                    <!-- Ours -->
+                    <div class="card-academic border-l-4 border-accent">
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="EventSpeech-T">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav"></audio>
+                    </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="Ours Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_Ours.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="EventSpeech">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav"></audio>
                     </div>
-                    <!-- VALL-E2 -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VALL_E2.png" alt="VALL-E2 Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_VALL_E2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_VALL_E2.png" alt="VALL-E2">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VALL_E2.wav"></audio>
                     </div>
-                    <!-- MATCHA-TTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_MATTCHA_TTS.png" alt="MATCHA-TTS Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_MATCHA_TTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_MATCHA_TTS.wav"></audio>
                     </div>
-                </div>
-                <!-- 第二排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- MMAudio+AS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_MMAudio+AS.png" alt="MMAudio+AS Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_MMAudio_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_MMAudio+AS.png" alt="MMAudio+AS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_MMAudio_AS.wav"></audio>
                     </div>
-                    <!-- Diff-Foley+AS -->
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_Diff_Foley_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Diff_Foley_AS.wav"></audio>
                     </div>
-                    <!-- VTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VTS Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_VTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VTS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
                     </div>
-                    <!-- VTS+VE -->
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VoiceCraft-Dub">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="HPMDubbing">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="StyleDubber">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                    </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VTS+AE.png" alt="VTS+VE Spectrogram 3" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_VTS_AE.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS+AE.png" alt="VTS+VE">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS_AE.wav"></audio>
                     </div>
                 </div>
             </div>
@@ -758,162 +603,73 @@
                     <span>Sample 4：</span>
                     <span class="sample-text">Dogs are sitting by the door.</span>
                 </div>
-                <!-- 第一排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                    <!-- GT -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_GT.png" alt="GT Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_GT.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_GT.png" alt="GT">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_GT.wav"></audio>
                     </div>
-                    <!-- Ours -->
+                    <div class="card-academic border-l-4 border-accent">
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="EventSpeech-T">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav"></audio>
+                    </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="Ours Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_Ours.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="EventSpeech">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav"></audio>
                     </div>
-                    <!-- VALL-E2 -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VALL_E2.png" alt="VALL-E2 Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_VALL_E2.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_VALL_E2.png" alt="VALL-E2">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VALL_E2.wav"></audio>
                     </div>
-                    <!-- MATCHA-TTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_MATCHA_TTS.png" alt="MATCHA-TTS Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_MATCHA_TTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_MATCHA_TTS.wav"></audio>
                     </div>
-                </div>
-                <!-- 第二排 4个样本 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- MMAudio+AS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_MMAudio+AS.png" alt="MMAudio+AS Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_MMAudio_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_MMAudio+AS.png" alt="MMAudio+AS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_MMAudio_AS.wav"></audio>
                     </div>
-                    <!-- Diff-Foley+AS -->
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_Diff_Foley_AS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Diff_Foley_AS.wav"></audio>
                     </div>
-                    <!-- VTS -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VTS Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_VTS.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VTS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
                     </div>
-                    <!-- VTS+VE -->
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VoiceCraft-Dub">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="HPMDubbing">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                    </div>
+                    <div class="card-academic">
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="StyleDubber">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                    </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VTS+AE.png" alt="VTS+VE Spectrogram 4" class="w-full rounded mb-2">
-                        <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_VTS_AE.wav" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS+AE.png" alt="VTS+VE">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS_AE.wav"></audio>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 7. Figure 轮播 - 学术化展示（新增圆点指示器） -->
-    <section class="mb-12">
-        <div class="content-container">
-            <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Qualitative Results</h2>
-            <div id="figureCarousel" class="carousel-container">
-                <button class="carousel-btn carousel-btn-left" onclick="moveSlide(-1)">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <div class="carousel-slides" id="figureSlides">
-                    <div class="carousel-slide">
-                        <img src="Images/Figure/1.png" alt="Figure 1" class="w-full rounded">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Images/Figure/2.png" alt="Figure 2" class="w-full rounded">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Images/Figure/3.png" alt="Figure 3" class="w-full rounded">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="Images/Figure/4.png" alt="Figure 4" class="w-full rounded">
-                    </div>
-                </div>
-                <button class="carousel-btn carousel-btn-right" onclick="moveSlide(1)">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <!-- 新增：Figure轮播圆点指示器容器 -->
-                <div id="figureDots" class="carousel-dots"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. Table 轮播 - 学术化展示（新增圆点指示器） -->
-   <section class="mb-12">
-    <div class="content-container">
-        <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Quantitative Results</h2>
-        <div id="tableCarousel" class="carousel-container">
-            <button class="carousel-btn carousel-btn-left" onclick="moveTableSlide(-1)">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="carousel-slides" id="tableSlides">
-                <!-- 所有轮播项保持原有结构，仅修改carousel-slide样式 -->
-                <div class="carousel-slide">
-                    <img src="Images/Table/1.png" alt="Table 1" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/2.png" alt="Table 2" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/3.png" alt="Table 3" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/4.png" alt="Table 4" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/5.png" alt="Table 5" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/6.png" alt="Table 6" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/7.png" alt="Table 7" class="rounded">
-                </div>
-                <div class="carousel-slide">
-                    <img src="Images/Table/8.png" alt="Table 8" class="rounded">
-                </div>
-            </div>
-            <button class="carousel-btn carousel-btn-right" onclick="moveTableSlide(1)">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-            <!-- 新增：Table轮播圆点指示器容器 -->
-            <div id="tableDots" class="carousel-dots"></div>
-        </div>
-    </div>
-</section>
 
     <!-- 页面底注 -->
     <footer class="page-footer">
@@ -921,282 +677,5 @@
             Thank you for review!
         </p>
     </footer>
-
-    <script>
-        // ========== Figure 轮播（无缝循环 + 自动播放 + 圆点指示器）==========
-        let slideIndex = 0;
-        const figureSlides = document.getElementById('figureSlides');
-        const totalFigureSlides = figureSlides ? figureSlides.querySelectorAll('.carousel-slide').length : 0;
-        let figureAutoPlayTimer; // 自动播放定时器
-        const figureDotsContainer = document.getElementById('figureDots');
-
-        // 初始化：复制第一份slide到末尾，实现无缝循环 + 生成圆点指示器
-        function initFigureCarousel() {
-            if (!figureSlides || totalFigureSlides === 0) return;
-            
-            // 生成圆点指示器
-            createFigureDots();
-            
-            // 复制第一份slide到末尾，实现无缝循环
-            const firstSlide = figureSlides.querySelector('.carousel-slide').cloneNode(true);
-            figureSlides.appendChild(firstSlide);
-            
-            // 更新圆点激活状态
-            updateFigureDotActive();
-            
-            // 启动自动播放（5秒轮播）
-            startFigureAutoPlay();
-        }
-
-        // 生成Figure轮播圆点指示器
-        function createFigureDots() {
-            if (!figureDotsContainer || totalFigureSlides === 0) return;
-            
-            // 清空原有圆点
-            figureDotsContainer.innerHTML = '';
-            
-            // 为每个slide创建一个圆点
-            for (let i = 0; i < totalFigureSlides; i++) {
-                const dot = document.createElement('div');
-                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-                dot.setAttribute('data-index', i);
-                
-                // 点击圆点切换到对应slide
-                dot.addEventListener('click', function() {
-                    slideIndex = parseInt(this.getAttribute('data-index'));
-                    figureSlides.style.transition = 'transform 0.6s ease-in-out';
-                    figureSlides.style.transform = `translateX(-${slideIndex * 100}%)`;
-                    updateFigureDotActive();
-                    stopFigureAutoPlay();
-                    startFigureAutoPlay();
-                });
-                
-                figureDotsContainer.appendChild(dot);
-            }
-        }
-
-        // 更新Figure圆点激活状态
-        function updateFigureDotActive() {
-            if (!figureDotsContainer || totalFigureSlides === 0) return;
-            
-            // 获取所有圆点
-            const dots = figureDotsContainer.querySelectorAll('.carousel-dot');
-            // 计算当前激活的索引（处理无缝循环的最后一张）
-            const activeIndex = slideIndex >= totalFigureSlides ? 0 : slideIndex < 0 ? totalFigureSlides - 1 : slideIndex;
-            
-            // 更新激活状态
-            dots.forEach((dot, index) => {
-                if (index === activeIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        // 切换轮播（核心无缝逻辑）
-        function moveSlide(step) {
-            if (!figureSlides) return;
-            
-            // 停止自动播放（手动操作后重置）
-            stopFigureAutoPlay();
-            
-            slideIndex += step;
-            figureSlides.style.transition = 'transform 0.6s ease-in-out';
-            figureSlides.style.transform = `translateX(-${slideIndex * 100}%)`;
-
-            // 无缝循环处理：最后一张→第一张（无回退动画）
-            if (slideIndex >= totalFigureSlides) {
-                setTimeout(() => {
-                    figureSlides.style.transition = 'none'; // 关闭动画
-                    slideIndex = 0;
-                    figureSlides.style.transform = `translateX(0)`;
-                    updateFigureDotActive(); // 更新圆点状态
-                }, 600); // 等待动画结束后重置
-            }
-            // 第一张←最后一张（无回退动画）
-            if (slideIndex < 0) {
-                figureSlides.style.transition = 'none';
-                slideIndex = totalFigureSlides;
-                figureSlides.style.transform = `translateX(-${slideIndex * 100}%)`;
-                // 强制重绘后恢复动画
-                setTimeout(() => {
-                    figureSlides.style.transition = 'transform 0.6s ease-in-out';
-                }, 0);
-            }
-            
-            // 更新圆点激活状态
-            updateFigureDotActive();
-
-            // 重置自动播放（手动操作后，5秒后继续自动轮播）
-            startFigureAutoPlay();
-        }
-
-        // 启动Figure自动播放（5秒轮播一次）
-        function startFigureAutoPlay() {
-            // 先清除旧定时器，避免重复
-            stopFigureAutoPlay();
-            figureAutoPlayTimer = setInterval(() => {
-                moveSlide(1); 
-            }, 6000); // 6秒自动轮播（学术页更舒缓）
-        }
-
-        // 停止Figure自动播放
-        function stopFigureAutoPlay() {
-            if (figureAutoPlayTimer) {
-                clearInterval(figureAutoPlayTimer);
-                figureAutoPlayTimer = null;
-            }
-        }
-
-        // ========== Table 轮播（无缝循环 + 自动播放 + 圆点指示器）==========
-        let tableSlideIndex = 0;
-        const tableSlides = document.getElementById('tableSlides');
-        const totalTableSlides = tableSlides ? tableSlides.querySelectorAll('.carousel-slide').length : 0;
-        let tableAutoPlayTimer;
-        const tableDotsContainer = document.getElementById('tableDots');
-
-        // 初始化Table轮播 + 生成圆点指示器
-        function initTableCarousel() {
-            if (!tableSlides || totalTableSlides === 0) return;
-            
-            // 生成圆点指示器
-            createTableDots();
-            
-            // 复制第一份slide到末尾，实现无缝循环
-            const firstSlide = tableSlides.querySelector('.carousel-slide').cloneNode(true);
-            tableSlides.appendChild(firstSlide);
-            
-            // 更新圆点激活状态
-            updateTableDotActive();
-            
-            // 启动自动播放
-            startTableAutoPlay();
-        }
-
-        // 生成Table轮播圆点指示器
-        function createTableDots() {
-            if (!tableDotsContainer || totalTableSlides === 0) return;
-            
-            // 清空原有圆点
-            tableDotsContainer.innerHTML = '';
-            
-            // 为每个slide创建一个圆点
-            for (let i = 0; i < totalTableSlides; i++) {
-                const dot = document.createElement('div');
-                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
-                dot.setAttribute('data-index', i);
-                
-                // 点击圆点切换到对应slide
-                dot.addEventListener('click', function() {
-                    tableSlideIndex = parseInt(this.getAttribute('data-index'));
-                    tableSlides.style.transition = 'transform 0.6s ease-in-out';
-                    tableSlides.style.transform = `translateX(-${tableSlideIndex * 100}%)`;
-                    updateTableDotActive();
-                    stopTableAutoPlay();
-                    startTableAutoPlay();
-                });
-                
-                tableDotsContainer.appendChild(dot);
-            }
-        }
-
-        // 更新Table圆点激活状态
-        function updateTableDotActive() {
-            if (!tableDotsContainer || totalTableSlides === 0) return;
-            
-            // 获取所有圆点
-            const dots = tableDotsContainer.querySelectorAll('.carousel-dot');
-            // 计算当前激活的索引（处理无缝循环的最后一张）
-            const activeIndex = tableSlideIndex >= totalTableSlides ? 0 : tableSlideIndex < 0 ? totalTableSlides - 1 : tableSlideIndex;
-            
-            // 更新激活状态
-            dots.forEach((dot, index) => {
-                if (index === activeIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        // Table切换逻辑
-        function moveTableSlide(step) {
-            if (!tableSlides) return;
-            
-            stopTableAutoPlay();
-            
-            tableSlideIndex += step;
-            tableSlides.style.transition = 'transform 0.6s ease-in-out';
-            tableSlides.style.transform = `translateX(-${tableSlideIndex * 100}%)`;
-
-            if (tableSlideIndex >= totalTableSlides) {
-                setTimeout(() => {
-                    tableSlides.style.transition = 'none';
-                    tableSlideIndex = 0;
-                    tableSlides.style.transform = `translateX(0)`;
-                    updateTableDotActive(); // 更新圆点状态
-                }, 600);
-            }
-            if (tableSlideIndex < 0) {
-                tableSlides.style.transition = 'none';
-                tableSlideIndex = totalTableSlides;
-                tableSlides.style.transform = `translateX(-${tableSlideIndex * 100}%)`;
-                setTimeout(() => {
-                    tableSlides.style.transition = 'transform 0.6s ease-in-out';
-                }, 0);
-            }
-            
-            // 更新圆点激活状态
-            updateTableDotActive();
-
-            startTableAutoPlay();
-        }
-
-        // 启动Table自动播放（5秒轮播一次）
-        function startTableAutoPlay() {
-            stopTableAutoPlay();
-            tableAutoPlayTimer = setInterval(() => {
-                moveTableSlide(1);
-            }, 6000); // 6秒自动轮播
-        }
-
-        // 停止Table自动播放
-        function stopTableAutoPlay() {
-            if (tableAutoPlayTimer) {
-                clearInterval(tableAutoPlayTimer);
-                tableAutoPlayTimer = null;
-            }
-        }
-
-        // ========== 鼠标悬停事件绑定（精准定位容器）==========
-        // Figure 悬浮暂停/离开继续
-        const figureCarouselEl = document.getElementById('figureCarousel');
-        if (figureCarouselEl) {
-            figureCarouselEl.addEventListener('mouseenter', function() {
-                stopFigureAutoPlay(); // 鼠标悬停，停止自动播放
-            });
-            figureCarouselEl.addEventListener('mouseleave', function() {
-                startFigureAutoPlay(); // 鼠标离开，5秒后继续自动播放
-            });
-        }
-
-        // Table 悬浮暂停/离开继续
-        const tableCarouselEl = document.getElementById('tableCarousel');
-        if (tableCarouselEl) {
-            tableCarouselEl.addEventListener('mouseenter', function() {
-                stopTableAutoPlay(); // 鼠标悬停，停止自动播放
-            });
-            tableCarouselEl.addEventListener('mouseleave', function() {
-                startTableAutoPlay(); // 鼠标离开，5秒后继续自动播放
-            });
-        }
-
-        // 页面加载完成后初始化轮播
-        document.addEventListener('DOMContentLoaded', function() {
-            initFigureCarousel();
-            initTableCarousel();
-        });
-    </script>
 </body>
 </html>
