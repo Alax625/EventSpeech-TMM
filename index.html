@@ -151,7 +151,7 @@
         .card-academic {
             background-color: var(--color-card);
             border-radius: 1rem;
-            padding: 2rem; /* 统一所有卡片内边距：2rem，和Abstract完全一致 */
+            padding: 2rem; /* 统一所有卡片内边距 */
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             border: 1px solid #F0F8F7;
@@ -160,19 +160,30 @@
             flex-direction: column;
         }
         
-        /* 关键修改：Method 完全继承统一内边距，仅控制图片大小 */
+        /* ========== 彻底解决宽度不一致问题 ========== */
         .method-card {
             padding: inherit !important;
             overflow: visible !important;
             height: auto !important;
         }
         .method-card img {
-            width: 100% !important;
+            width: 100% !important; /* 图片占满卡片内边距宽度，和Abstract文本完全一致 */
             height: auto !important;
-            max-height: 460px !important; /* 精准缩小高度，匹配目标图比例 */
+            max-height: 470px !important; /* 完整显示架构图 */
             object-fit: contain !important;
             display: block;
-            border-radius: 0.5rem;
+            margin: 0 auto 1.5rem auto; /* 图片底部留间距给说明文字 */
+            border-radius: 0 !important; /* 去掉圆角 */
+        }
+        /* 图片下方说明文字（Caption）样式，和论文完全一致 */
+        .method-card .caption {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--color-secondary);
+            text-align: justify;
+            margin: 0;
+            width: 100% !important; /* 图注占满卡片内边距宽度，与图片完全同宽 */
         }
 
         .card-academic:hover {
@@ -349,6 +360,9 @@
             <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Method</h2>
             <div class="card-academic method-card">
                 <img src="Images/Method.png" alt="Method Framework">
+                <p class="caption">
+                    <strong>Figure 2.</strong> Overview of the EventSpeech Core Architecture. <strong>Event Encoder (left):</strong> Transduces video into events via V2E, extracting disentangled kinematics (e.g., Lip Motion) using a MHFE. <strong>Audio Encoder (right):</strong> Synergizes Mamba blocks with HWC to capture both global prosody and local spectral details. <strong>Alignment & Generation (middle):</strong> Bridges the temporal gap via bidirectional attention and InfoNCE, conditioning the Flow Matching decoder for expressive speech generation.
+                </p>
             </div>
         </div>
     </section>
