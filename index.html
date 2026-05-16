@@ -20,9 +20,9 @@
             --color-footer: #718096; /* 底注文字颜色 */
         }
 
-        /* 统一内容容器 */
+        /* 统一内容容器 - 加宽适配Method大图 */
         .content-container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 0 1.5rem;
             width: 100%;
@@ -175,6 +175,17 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+        }
+        /* Method卡片特殊处理：去除左右内边距，保证大图完整显示 */
+        .method-card {
+            padding: 0 !important;
+            overflow: visible !important;
+        }
+        .method-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 1rem;
         }
         .card-academic:hover {
             transform: translateY(-3px); /* 更自然的上浮 */
@@ -354,19 +365,19 @@
             <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Abstract</h2>
             <div class="card-academic">
             <p class="text-gray-700 leading-relaxed text-justify" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem">
-    Traditional visually-guided speech generation relies heavily on frame-based RGB inputs, yet it faces a fundamental physical bottleneck: the "Temporal Granularity Mismatch". Since standard cameras integrate light over a fixed exposure time, they inevitably blur the high-frequency articulatory transients (e.g., micro-tremors and rapid lip onsets) essential for expressive speech. To break this ceiling, we propose <strong>EventSpeech</strong>, the first framework to leverage neuromorphic events for expressive speech generation. Event sensors yield asynchronous, microsecond-precise streams that naturally align with the temporal dynamics of acoustic waveforms. Our approach features a multi-scale <i>Audio Encoder</i> synergizing the proposed Hierarchical Wavelet Contextualizer (HWC), coupled with a bidirectional alignment mechanism that synchronizes sparse visual dynamics with dense acoustic features. Crucially, to validate the superiority of events beyond simulation, we construct <strong>EVT-SPK</strong>, the first benchmark comprising both large-scale synthetic data and real-world recordings captured via specialized neuromorphic hardware. Extensive experiments demonstrate that EventSpeech significantly outperforms state-of-the-art across the objective and subjective evaluation, particularly in preserving fine-grained prosody and maintaining robustness against motion blur, establishing a new paradigm for speech generation based on neuromorphic events.
+    Traditional visually-guided speech generation relies heavily on frame-based RGB inputs, yet it faces a fundamental physical bottleneck: the "Temporal Granularity Mismatch". Since standard cameras integrate light over a fixed exposure time, they inevitably blur the high-frequency articulatory transients (e.g., micro-tremors and rapid lip onsets) essential for expressive speech. To break this ceiling, we propose <strong>EventSpeech</strong>, the first framework to leverage neuromorphic events for expressive speech generation. Event sensors yield asynchronous, microsecond-precise streams that naturally align with the temporal dynamics of acoustic waveforms. Our approach features a multi-scale <i>Audio Encoder</i> synergizing the proposed Hierarchical Wavelet Contextualizer (HWC), coupled with a bidirectional alignment mechanism that synchronizes sparse visual dynamics with dense acoustic features. Crucially, to validate the superiority of events beyond simulation, we construct <strong>EVT‑SPK</strong>, the first benchmark comprising both large‑scale synthetic data and real‑world recordings captured via specialized neuromorphic hardware. Extensive experiments demonstrate that EventSpeech significantly outperforms state‑of‑the‑art across the objective and subjective evaluation, particularly in preserving fine‑grained prosody and maintaining robustness against motion blur, establishing a new paradigm for speech generation based on neuromorphic events.
             </p>
             </div>
         </div>
     </section>
 
-    <!-- 4. Method - 移除图注，优化展示 -->
+    <!-- 4. Method - 修复图片显示不完整 -->
     <section class="mb-12">
         <div class="content-container">
             <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Method</h2>
-            <div class="card-academic">
-                <!-- 方法图 - 移除图注 -->
-                <img src="Images/Method.png" alt="Method Framework" class="w-full rounded">
+            <!-- 新增method-card类，去除内边距保证大图完整 -->
+            <div class="card-academic method-card">
+                <img src="Images/Method.png" alt="Method Framework">
             </div>
         </div>
     </section>
@@ -390,65 +401,65 @@
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
                         <img src="Sample_Mel/Sample_1/Mel_GT.png" alt="GT">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_GT.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_GT.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
-                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="EventSpeech-T">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech‑T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="EventSpeech‑T">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
                         <img src="Sample_Mel/Sample_1/Mel_Ours.png" alt="EventSpeech">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Ours.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VALL_E2.png" alt="VALL-E2">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VALL_E2.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL‑E 2</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_VALL_E2.png" alt="VALL‑E2">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VALL_E2.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_MATCHA_TTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA‑TTS</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_MATCHA_TTS.png" alt="MATCHA‑TTS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_MATCHA_TTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
                         <img src="Sample_Mel/Sample_1/Mel_MMAudio+AS.png" alt="MMAudio+AS">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_MMAudio_AS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_MMAudio_AS.wav">
                     </div>
                 </div>
                 <!-- 第二行 6个 -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_Diff_Foley_AS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff‑Foley+AS</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_Diff_Foley+AS.png" alt="Diff‑Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_Diff_Foley_AS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
                         <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VTS">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VoiceCraft-Dub">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft‑Dub</h4>
+                        <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="VoiceCraft‑Dub">
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
                         <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="HPMDubbing">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
                         <img src="Sample_Mel/Sample_1/Mel_VTS.png" alt="StyleDubber">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
                         <img src="Sample_Mel/Sample_1/Mel_VTS+AE.png" alt="VTS+VE">
-                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS_AE.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_1/audio_VTS_AE.wav">
                     </div>
                 </div>
             </div>
@@ -463,64 +474,64 @@
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
                         <img src="Sample_Mel/Sample_2/Mel_GT.png" alt="GT">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_GT.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_GT.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
-                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="EventSpeech-T">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech‑T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="EventSpeech‑T">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
                         <img src="Sample_Mel/Sample_2/Mel_Ours.png" alt="EventSpeech">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Ours.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VALL_E2.png" alt="VALL-E2">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VALL_E2.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL‑E 2</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_VALL_E2.png" alt="VALL‑E2">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VALL_E2.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_MATCHA_TTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA‑TTS</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_MATCHA_TTS.png" alt="MATCHA‑TTS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_MATCHA_TTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
                         <img src="Sample_Mel/Sample_2/Mel_MMAudio+AS.png" alt="MMAudio+AS">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_MMAudio_AS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_MMAudio_AS.wav">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_Diff_Foley_AS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff‑Foley+AS</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_Diff_Foley+AS.png" alt="Diff‑Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_Diff_Foley_AS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
                         <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VTS">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VoiceCraft-Dub">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft‑Dub</h4>
+                        <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="VoiceCraft‑Dub">
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
                         <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="HPMDubbing">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
                         <img src="Sample_Mel/Sample_2/Mel_VTS.png" alt="StyleDubber">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
                         <img src="Sample_Mel/Sample_2/Mel_VTS+AE.png" alt="VTS+VE">
-                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS_AE.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_2/audio_VTS_AE.wav">
                     </div>
                 </div>
             </div>
@@ -535,64 +546,64 @@
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
                         <img src="Sample_Mel/Sample_3/Mel_GT.png" alt="GT">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_GT.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_GT.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
-                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="EventSpeech-T">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech‑T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="EventSpeech‑T">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
                         <img src="Sample_Mel/Sample_3/Mel_Ours.png" alt="EventSpeech">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Ours.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VALL_E2.png" alt="VALL-E2">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VALL_E2.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL‑E 2</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_VALL_E2.png" alt="VALL‑E2">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VALL_E2.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_MATCHA_TTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA‑TTS</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_MATCHA_TTS.png" alt="MATCHA‑TTS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_MATCHA_TTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
                         <img src="Sample_Mel/Sample_3/Mel_MMAudio+AS.png" alt="MMAudio+AS">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_MMAudio_AS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_MMAudio_AS.wav">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_Diff_Foley_AS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff‑Foley+AS</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_Diff_Foley+AS.png" alt="Diff‑Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_Diff_Foley_AS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
                         <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VTS">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VoiceCraft-Dub">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft‑Dub</h4>
+                        <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="VoiceCraft‑Dub">
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
                         <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="HPMDubbing">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
                         <img src="Sample_Mel/Sample_3/Mel_VTS.png" alt="StyleDubber">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
                         <img src="Sample_Mel/Sample_3/Mel_VTS+AE.png" alt="VTS+VE">
-                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS_AE.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_3/audio_VTS_AE.wav">
                     </div>
                 </div>
             </div>
@@ -607,64 +618,64 @@
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">GT</h4>
                         <img src="Sample_Mel/Sample_4/Mel_GT.png" alt="GT">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_GT.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_GT.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
-                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="EventSpeech-T">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech‑T (Ours)</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="EventSpeech‑T">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav">
                     </div>
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech (Ours)</h4>
                         <img src="Sample_Mel/Sample_4/Mel_Ours.png" alt="EventSpeech">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Ours.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL-E 2</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VALL_E2.png" alt="VALL-E2">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VALL_E2.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VALL‑E 2</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_VALL_E2.png" alt="VALL‑E2">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VALL_E2.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA-TTS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_MATCHA_TTS.png" alt="MATCHA-TTS">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_MATCHA_TTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MATCHA‑TTS</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_MATCHA_TTS.png" alt="MATCHA‑TTS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_MATCHA_TTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">MMAudio+AS</h4>
                         <img src="Sample_Mel/Sample_4/Mel_MMAudio+AS.png" alt="MMAudio+AS">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_MMAudio_AS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_MMAudio_AS.wav">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff-Foley+AS</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_Diff_Foley+AS.png" alt="Diff-Foley+AS">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_Diff_Foley_AS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">Diff‑Foley+AS</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_Diff_Foley+AS.png" alt="Diff‑Foley+AS">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_Diff_Foley_AS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS</h4>
                         <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VTS">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
-                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VoiceCraft-Dub">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                        <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft‑Dub</h4>
+                        <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="VoiceCraft‑Dub">
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">HPMDubbing</h4>
                         <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="HPMDubbing">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">StyleDubber</h4>
                         <img src="Sample_Mel/Sample_4/Mel_VTS.png" alt="StyleDubber">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS.wav">
                     </div>
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VTS+VE</h4>
                         <img src="Sample_Mel/Sample_4/Mel_VTS+AE.png" alt="VTS+VE">
-                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS_AE.wav"></audio>
+                        <audio controls><source src="Sample_Audio/Sample_4/audio_VTS_AE.wav">
                     </div>
                 </div>
             </div>
