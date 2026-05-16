@@ -20,11 +20,11 @@
             --color-footer: #718096; /* 底注文字颜色 */
         }
 
-        /* 统一内容容器 - 加宽适配Method大图 */
+        /* 统一内容容器 - 加宽适配超宽Method图 */
         .content-container {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
             width: 100%;
         }
 
@@ -176,7 +176,7 @@
             display: flex;
             flex-direction: column;
         }
-        /* Method卡片特殊处理：去除左右内边距，保证大图完整显示 */
+        /* Method卡片：彻底修复横向裁切，**左右内边距=0，无溢出隐藏** */
         .method-card {
             padding: 0 !important;
             overflow: visible !important;
@@ -371,11 +371,10 @@
         </div>
     </section>
 
-    <!-- 4. Method - 修复图片显示不完整 -->
+    <!-- 4. Method - 终极修复：图片100%横向完整显示 -->
     <section class="mb-12">
         <div class="content-container">
             <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Method</h2>
-            <!-- 新增method-card类，去除内边距保证大图完整 -->
             <div class="card-academic method-card">
                 <img src="Images/Method.png" alt="Method Framework">
             </div>
