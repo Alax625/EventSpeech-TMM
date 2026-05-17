@@ -349,8 +349,7 @@
             <h2 class="text-2xl font-bold mb-4 text-gray-900 section-title">Abstract</h2>
             <div class="card-academic">
             <p class="text-gray-700 leading-relaxed text-justify" style="font-family: 'Times New Roman', Times, serif; font-size: 1.1rem">
-    Traditional visually-guided speech generation relies heavily on frame-based RGB inputs, yet it faces a fundamental physical bottleneck: the "Temporal Granularity Mismatch". Since standard cameras integrate light over a fixed exposure time, they inevitably blur the high-frequency articulatory transients (e.g., micro-tremors and rapid lip onsets) essential for expressive speech. To break this ceiling, we propose <strong>EventSpeech</strong>, the first framework to leverage neuromorphic events for expressive speech generation. Event sensors yield asynchronous, microsecond-precise streams that naturally align with the temporal dynamics of acoustic waveforms. Our approach features a multi-scale <i>Audio Encoder</i> synergizing the proposed Hierarchical Wavelet Contextualizer (HWC), coupled with a bidirectional alignment mechanism that synchronizes sparse visual dynamics with dense acoustic features. Crucially, to validate the superiority of events beyond simulation, we construct <strong>EVT-SPK</strong>, the first benchmark comprising both large-scale synthetic data and real-world recordings captured via specialized neuromorphic hardware. Extensive experiments demonstrate that EventSpeech significantly outperforms state-of-the-art across the objective and subjective evaluation, particularly in preserving fine-grained prosody and maintaining robustness against motion blur, establishing a new paradigm for speech generation based on neuromorphic events.
-            </p>
+       Traditional RGB-based speech generation faces Temporal Granularity Mismatch since fixed camera exposure times inevitably blur the high-frequency articulatory transients essential for rendering emotional speech. To break this ceiling, we propose EventSpeech as a novel text-conditioned framework pioneering the use of neuromorphic events for expressive speech generation, since these microsecond-precise events naturally align with acoustic waveform dynamics. Our architecture integrates a dedicated Event Encoder to model sparse neuromorphic events alongside a multi-scale Audio Encoder featuring a Hierarchical Wavelet Contextualizer (HWC). A bidirectional alignment mechanism seamlessly synchronizes linguistic content and visual dynamics with dense acoustic features. Furthermore, we construct EVT-SPK as the first benchmark comprising large-scale synthetic data and real-world recordings from specialized neuromorphic hardware. Extensive evaluations demonstrate that EventSpeech significantly outperforms current baselines by preserving fine-grained emotions and resisting motion blur to establish a new paradigm for multimodal speech generation.            </p>
             </div>
         </div>
     </section>
@@ -394,9 +393,9 @@
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_Ours_T.png" alt="EventSpeech-T Spectrogram 1" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_1/Mel_EventSpeech-T.png" alt="EventSpeech-T Spectrogram 1" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_Ours_T.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_1/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -463,9 +462,9 @@
                     <!-- VoiceCraft-Dub -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_1/Mel_VoiceCraft_Dub.png" alt="VoiceCraft-Dub Spectrogram 1" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_1/Mel_VoiceCraft-Dub.png" alt="VoiceCraft-Dub Spectrogram 1" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_1/audio_VoiceCraft_Dub.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_1/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -519,9 +518,9 @@
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_Ours_T.png" alt="EventSpeech-T Spectrogram 2" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_2/Mel_EventSpeech-T.png" alt="EventSpeech-T Spectrogram 2" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_Ours_T.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_2/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -588,9 +587,9 @@
                     <!-- VoiceCraft-Dub -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_2/Mel_VoiceCraft_Dub.png" alt="VoiceCraft-Dub Spectrogram 2" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_2/Mel_VoiceCraft-Dub.png" alt="VoiceCraft-Dub Spectrogram 2" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_2/audio_VoiceCraft_Dub.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_2/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -644,9 +643,9 @@
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_Ours_T.png" alt="EventSpeech-T Spectrogram 3" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_3/Mel_EventSpeech-T.png" alt="EventSpeech-T Spectrogram 3" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_Ours_T.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_3/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -713,9 +712,9 @@
                     <!-- VoiceCraft-Dub -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_3/Mel_VoiceCraft_Dub.png" alt="VoiceCraft-Dub Spectrogram 3" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_3/Mel_VoiceCraft-Dub.png" alt="VoiceCraft-Dub Spectrogram 3" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_3/audio_VoiceCraft_Dub.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_3/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -769,9 +768,9 @@
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
                         <h4 class="text-sm font-medium mb-2 text-center text-accent">EventSpeech-T (Ours)</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_Ours_T.png" alt="EventSpeech-T Spectrogram 4" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_4/Mel_EventSpeech-T.png" alt="EventSpeech-T Spectrogram 4" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_Ours_T.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_4/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
@@ -838,9 +837,9 @@
                     <!-- VoiceCraft-Dub -->
                     <div class="card-academic">
                         <h4 class="text-sm font-medium mb-2 text-center text-gray-700">VoiceCraft-Dub</h4>
-                        <img src="Sample_Mel/Sample_4/Mel_VoiceCraft_Dub.png" alt="VoiceCraft-Dub Spectrogram 4" class="w-full rounded mb-2">
+                        <img src="Sample_Mel/Sample_4/Mel_VoiceCraft-Dub.png" alt="VoiceCraft-Dub Spectrogram 4" class="w-full rounded mb-2">
                         <audio controls>
-                            <source src="Sample_Audio/Sample_4/audio_VoiceCraft_Dub.wav" type="audio/mpeg">
+                            <source src="Sample_Audio/Sample_4/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         
                     </div>
