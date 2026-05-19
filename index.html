@@ -82,7 +82,7 @@
 
        /* 按钮区：清新自然的学术风格（基础样式保留） */
 .btn-academic {
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 1.2rem;
     border-radius: 0.6rem;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -90,7 +90,7 @@
     gap: 0.6rem;
     color: var(--color-primary);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     border: 1px solid transparent; /* 统一边框初始值 */
@@ -133,11 +133,21 @@
     box-shadow: 0 4px 8px rgba(31, 41, 55, 0.12);
 }
 
-/* 4. Dataset按钮：数据绿（清新自然） */
-.dataset-btn {
-    background-color: #ECFDF5 !important; /* 浅绿背景 */
-    border-color: #A7F3D0 !important; /* 淡绿边框 */
-    color: #065F46 !important; /* 深绿文字 */
+/* 3. Video按钮：YouTube红色系（适配页面风格） */
+.video-btn {
+    background-color: #FEF2F2 !important;
+    border-color: #FCA5A5 !important;
+    color: #B91C1C !important;
+}
+.video-btn i.fa-youtube {
+    color: #FF0000 !important;
+}
+.video-btn:hover {
+    background-color: #FEE2E2 !important;
+    border-color: #F87171 !important;
+    color: #991B1B !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(185, 28, 28, 0.12);
 }
 
 /* 统一图标尺寸 */
@@ -268,12 +278,12 @@
         }
    /* ========== 基础按钮样式（强制优先级） ========== */
 .btn-academic {
-    padding: 0.75rem 1.75rem !important;
-    border-radius: 0.75rem !important;
+    padding: 0.6rem 1.2rem !important;
+    border-radius: 0.6rem !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.75rem !important;
-    font-size: 0.95rem !important;
+    gap: 0.6rem !important;
+    font-size: 0.9rem !important;
     font-weight: 500 !important;
     text-decoration: none !important;
     border: 1px solid #e5e7eb !important;
@@ -335,9 +345,9 @@
                 <img src="https://cdn-icons-png.flaticon.com/128/25/25231.png" alt="GitHub logo">
                 Code 
             </button>
-            <!-- Dataset按钮：阻止跳转 + 保留点击反馈 -->
-            <a href="javascript:void(0);" class="btn-academic dataset-btn disabled" onclick="return false;">
-                <i class="fa-solid fa-database w-5 text-center"></i> Dataset
+            <!-- Video按钮：红色YouTube图标 + 适配配色 -->
+            <a href="javascript:void(0);" class="btn-academic video-btn disabled" onclick="return false;">
+                <i class="fa-brands fa-youtube w-5 text-center"></i> Video
             </a>
         </div>
     </div>
@@ -388,7 +398,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_GT.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -397,7 +407,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -406,7 +416,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_Ours.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VALL-E2 -->
                     <div class="card-academic">
@@ -415,7 +425,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_VALL_E2.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第二排 4个样本 -->
@@ -427,7 +437,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_MATCHA_TTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- MMAudio+AS -->
                     <div class="card-academic">
@@ -436,7 +446,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_MMAudio_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- Diff-Foley+AS -->
                     <div class="card-academic">
@@ -445,7 +455,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_Diff_Foley_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS -->
                     <div class="card-academic">
@@ -454,7 +464,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_VTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第三排 4个样本 -->
@@ -466,7 +476,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- HPMDubbing -->
                     <div class="card-academic">
@@ -475,7 +485,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_HPMDubbing.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- StyleDubber -->
                     <div class="card-academic">
@@ -484,7 +494,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_StyleDubber.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS+VE -->
                     <div class="card-academic">
@@ -493,7 +503,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_1/audio_VTS_AE.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -513,7 +523,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_GT.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -522,7 +532,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -531,7 +541,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_Ours.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VALL-E2 -->
                     <div class="card-academic">
@@ -540,7 +550,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_VALL_E2.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第二排 4个样本 -->
@@ -552,7 +562,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_MATCHA_TTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- MMAudio+AS -->
                     <div class="card-academic">
@@ -561,7 +571,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_MMAudio_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- Diff-Foley+AS -->
                     <div class="card-academic">
@@ -570,7 +580,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_Diff_Foley_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS -->
                     <div class="card-academic">
@@ -579,7 +589,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_VTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第三排 4个样本 -->
@@ -591,7 +601,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- HPMDubbing -->
                     <div class="card-academic">
@@ -600,7 +610,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_HPMDubbing.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- StyleDubber -->
                     <div class="card-academic">
@@ -609,7 +619,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_StyleDubber.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS+VE -->
                     <div class="card-academic">
@@ -618,7 +628,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_2/audio_VTS_AE.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -638,7 +648,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_GT.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -647,7 +657,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -656,7 +666,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_Ours.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VALL-E2 -->
                     <div class="card-academic">
@@ -665,7 +675,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_VALL_E2.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第二排 4个样本 -->
@@ -677,7 +687,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_MATCHA_TTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- MMAudio+AS -->
                     <div class="card-academic">
@@ -686,7 +696,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_MMAudio_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- Diff-Foley+AS -->
                     <div class="card-academic">
@@ -695,7 +705,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_Diff_Foley_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS -->
                     <div class="card-academic">
@@ -704,7 +714,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_VTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第三排 4个样本 -->
@@ -716,7 +726,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- HPMDubbing -->
                     <div class="card-academic">
@@ -725,7 +735,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_HPMDubbing.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- StyleDubber -->
                     <div class="card-academic">
@@ -734,7 +744,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_StyleDubber.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS+VE -->
                     <div class="card-academic">
@@ -743,7 +753,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_3/audio_VTS_AE.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
             </div>
@@ -763,7 +773,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_GT.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech-T (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -772,7 +782,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_EventSpeech-T.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- EventSpeech (Ours) -->
                     <div class="card-academic border-l-4 border-accent">
@@ -781,7 +791,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_Ours.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VALL-E2 -->
                     <div class="card-academic">
@@ -790,7 +800,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_VALL_E2.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第二排 4个样本 -->
@@ -802,7 +812,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_MATCHA_TTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- MMAudio+AS -->
                     <div class="card-academic">
@@ -811,7 +821,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_MMAudio_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- Diff-Foley+AS -->
                     <div class="card-academic">
@@ -820,7 +830,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_Diff_Foley_AS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS -->
                     <div class="card-academic">
@@ -829,7 +839,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_VTS.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
                 <!-- 第三排 4个样本 -->
@@ -841,7 +851,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_VoiceCraft-Dub.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- HPMDubbing -->
                     <div class="card-academic">
@@ -850,7 +860,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_HPMDubbing.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- StyleDubber -->
                     <div class="card-academic">
@@ -859,7 +869,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_StyleDubber.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                     <!-- VTS+VE -->
                     <div class="card-academic">
@@ -868,7 +878,7 @@
                         <audio controls>
                             <source src="Sample_Audio/Sample_4/audio_VTS_AE.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
-                        
+                        </audio>
                     </div>
                 </div>
             </div>
